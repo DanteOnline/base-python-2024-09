@@ -26,8 +26,8 @@ movies = [
 @app.get("/", response_class=HTMLResponse)
 async def index(request: Request):
     return templates.TemplateResponse(
+        {"request": request, "message": "Добро пожаловать!!", 'title': 'Главная'},
         "index.html",
-        {"request": request, "message": "Добро пожаловать!!", 'title': 'Главная'}
     )
 
 
